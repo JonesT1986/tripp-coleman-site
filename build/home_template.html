@@ -1,17 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Tripp Coleman (Trippmagic) is a close-up and stage magician based in Pilot Butte, SK, performing corporate events, weddings, private parties and family shows across Saskatchewan.">
-<meta property="og:title" content="Tripp Coleman | Magic That Hits Different">
-<meta property="og:description" content="Close-up and stage magic for corporate events, weddings and private parties across Saskatchewan.">
-<meta property="og:image" content="img/ace.webp">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d0a09'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='%23d24a3e'%3E%E2%99%A5%3C/text%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"PerformingGroup","name":"Tripp Coleman","alternateName":"Trippmagic","description":"Close-up and stage magician","telephone":"+1-306-209-8861","email":"timcoleman777@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Pilot Butte","addressRegion":"SK","addressCountry":"CA"},"sameAs":["https://www.facebook.com/TrippMagic317","https://www.instagram.com/trippcoleman317/","https://agnt.com/talent/Tripp","https://www.gigsalad.com/trippmagic_pilot_butte"]}</script>
-<title>Tripp Coleman | Magician in Regina & Saskatchewan</title>
-
+<title>Tripp Coleman</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">
@@ -234,10 +222,6 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 }
 </style>
 
-
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
-</head>
-<body>
 <header class="top" id="top">
   <div class="wrap">
     <a class="logo" href="#home" aria-label="Tripp Coleman, home"><b>Tripp Coleman</b><small>The art of impossible</small></a>
@@ -253,7 +237,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 
 <section class="hero" id="home" aria-label="Introduction">
   <canvas id="stage" aria-label="3D Tripp Coleman levitating a playing card. Drag to spin the cards, tap for a flourish."></canvas>
-  <img class="hero-poster" src="img/tripp.webp" alt="">
+  <img class="hero-poster" src="{{TRIPP}}" alt="">
   <div class="wrap">
     <div class="hero-copy">
       <div class="eyebrow">Not your ordinary magician</div>
@@ -287,7 +271,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
       <div class="clients"><span>Performed for</span><ul><li>Capital GMC</li><li>John Deere</li><li>eXp Realty</li><li>Conexus Arts Centre</li><li>Regina Public Library</li></ul></div>
     </div>
     <figure class="portrait" style="margin:0">
-      <img src="img/ace.webp" alt="Tripp Coleman holding up the ace of hearts in front of his face">
+      <img src="{{ACE}}" alt="Tripp Coleman holding up the ace of hearts in front of his face">
       <figcaption>Your card, presumably.</figcaption>
     </figure>
   </div>
@@ -354,13 +338,13 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
       <p>Cards in the air, aces on demand, and a phoenix that keeps coming back.</p>
     </div>
     <div class="gallery" id="gal">
-      <figure class="shot"><img loading="lazy" src="img/rain.webp" alt="Tripp throwing a full deck of cards into the air in a brick alley"></figure>
-      <figure class="shot"><img loading="lazy" src="img/aces.webp" alt="Tripp fanning the four aces toward the camera"></figure>
-      <figure class="shot"><img loading="lazy" src="img/spring.webp" alt="Tripp springing cards from one hand to the other"></figure>
-      <figure class="shot"><img loading="lazy" src="img/hands.webp" alt="Close-up of Tripp's hands cutting a red-backed deck"></figure>
-      <figure class="shot"><img loading="lazy" src="img/throw.webp" alt="Tripp flinging cards against a brick wall"></figure>
-      <figure class="shot"><img loading="lazy" src="img/phoenix.webp" alt="Tripp holding up a phoenix card in front of his face"></figure>
-      <figure class="shot"><img loading="lazy" src="img/levitate.webp" alt="Tripp with his hands shaped around an invisible floating object"></figure>
+      <figure class="shot"><img loading="lazy" src="{{RAIN}}" alt="Tripp throwing a full deck of cards into the air in a brick alley"></figure>
+      <figure class="shot"><img loading="lazy" src="{{ACES}}" alt="Tripp fanning the four aces toward the camera"></figure>
+      <figure class="shot"><img loading="lazy" src="{{SPRING}}" alt="Tripp springing cards from one hand to the other"></figure>
+      <figure class="shot"><img loading="lazy" src="{{HANDS}}" alt="Close-up of Tripp's hands cutting a red-backed deck"></figure>
+      <figure class="shot"><img loading="lazy" src="{{THROW}}" alt="Tripp flinging cards against a brick wall"></figure>
+      <figure class="shot"><img loading="lazy" src="{{PHOENIX}}" alt="Tripp holding up a phoenix card in front of his face"></figure>
+      <figure class="shot"><img loading="lazy" src="{{LEVITATE}}" alt="Tripp with his hands shaped around an invisible floating object"></figure>
     </div>
   </div>
 </section>
@@ -455,7 +439,7 @@ function initStage(){
   camera.position.set(0, 0, 7);
 
   const loader = new THREE.TextureLoader();
-  const tex = loader.load('img/tripp.webp'), depth = loader.load('img/depth.png');
+  const tex = loader.load('{{TRIPP}}'), depth = loader.load('{{DEPTH}}');
   [tex, depth].forEach(t => { t.minFilter = THREE.LinearFilter; t.generateMipmaps = false; });
 
   /* smoky backdrop */
@@ -483,7 +467,7 @@ function initStage(){
   fog.position.z = -6; scene.add(fog);
 
   /* 3D Tripp: displaced, depth-shaded, rim-lit, with a dissolve-in */
-  const H = 3.25, W = H * 625 / 1100;
+  const H = 3.25, W = H * {{TW}} / {{TH}};
   const rig = new THREE.Group(); scene.add(rig);
   const body = new THREE.Group(); rig.add(body);
   const trippMat = new THREE.ShaderMaterial({
@@ -540,7 +524,7 @@ function initStage(){
   }
 
   /* the levitating ace between his hands */
-  const handPos = new THREE.Vector3((0.517-.5)*W, (.5-0.56)*H, .62);
+  const handPos = new THREE.Vector3(({{CU}}-.5)*W, (.5-{{CV}})*H, .62);
   const ace = makeCard(faces[0], .3); ace.position.copy(handPos); body.add(ace);
   const glow = new THREE.Mesh(new THREE.PlaneGeometry(1.1,1.1), new THREE.MeshBasicMaterial({map:halo, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending}));
   glow.position.copy(handPos).add(new THREE.Vector3(0,0,-.08)); body.add(glow);
@@ -710,6 +694,3 @@ form.addEventListener('submit', e => {
 });
 })();
 </script>
-
-</body>
-</html>
