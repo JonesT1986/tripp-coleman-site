@@ -6,7 +6,7 @@ or from Travis directly (phone, email, Instagram, Facebook). Do not add claims w
 Items marked CONFIRM still need Tripp's sign-off.
 """
 
-SITE = "https://www.trippcoleman.com"   # CONFIRM: replace with the real domain, then rebuild
+SITE = "https://trippmagic.ca"
 NAME = "Tripp Coleman"
 ALT_NAME = "Trippmagic"
 BIZ_NAME = "Tripp Coleman – Trippmagic"

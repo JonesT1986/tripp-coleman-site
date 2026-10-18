@@ -40,4 +40,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.trippcoleman.com/sitemap.xml
+Sitemap: https://trippmagic.ca/sitemap.xml
