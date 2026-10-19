@@ -30,40 +30,33 @@
     if (navigator.clipboard) navigator.clipboard.writeText(v).then(() => done('Copied')).catch(() => done('Press Ctrl+C'));
   }));
 
-  /* booking form: opens the visitor's email or text app with the request filled in */
+  /* booking form: posts to Formspree, which emails the request to Tripp */
+  const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID'; // <- paste the endpoint from formspree.io
   const form = document.getElementById('bookForm');
   if (!form) return;
   const err = document.getElementById('bErr');
-  form.addEventListener('submit', e => {
+  const btn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const d = Object.fromEntries(new FormData(form));
+    err.textContent = '';
+    const fd = new FormData(form);
+    const d = Object.fromEntries(fd);
     if (!d.name.trim()) { err.textContent = 'Add your name so Tripp knows who to reply to.'; form.bName.focus(); return; }
     if (!/^\S+@\S+\.\S+$/.test(d.email)) { err.textContent = 'Enter an email address like you@example.com.'; form.bEmail.focus(); return; }
-    const lines = [`Booking request for Tripp Coleman`, ``, `Name: ${d.name}`, `Email: ${d.email}`];
-    if (d.phone) lines.push(`Phone: ${d.phone}`);
-    lines.push(`Event: ${d.type}`);
-    if (d.date) lines.push(`Date: ${d.date}`);
-    if (d.guests) lines.push(`Guests: ${d.guests}`);
-    if (d.city) lines.push(`Where: ${d.city}`);
-    if (d.message) lines.push('', d.message);
-    const text = lines.join('\n');
-    const subject = `Booking request: ${d.type}${d.date ? ' on ' + d.date : ''}`;
-    const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
-    const sms = `sms:${PHONE_E164}?&body=${encodeURIComponent(text)}`;
-    track('generate_lead', { event_type: d.type });
-    form.innerHTML = `<div class="done"><h3>Almost done: send it to Tripp.</h3>
-      <p>Your email app should open with the request filled in. Press send there. If it didn't open, use a button below or copy the text.</p>
-      <pre id="reqText"></pre>
-      <div class="ctas"><a class="btn btn-primary" href="${mailto}">Email to Tripp</a><a class="btn btn-ghost" href="${sms}">Text to Tripp</a><button type="button" class="btn btn-ghost" id="copyReq">Copy request</button></div>
-      <p>Or call ${PHONE}.</p></div>`;
-    document.getElementById('reqText').textContent = text;
-    document.getElementById('copyReq').addEventListener('click', ev => {
-      const b = ev.currentTarget;
-      navigator.clipboard.writeText(text).then(() => { b.textContent = 'Copied'; }).catch(() => {
-        const r = document.createRange(); r.selectNodeContents(document.getElementById('reqText'));
-        const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press copy';
-      });
-    });
-    location.href = mailto;
+    if (d._gotcha) return; // honeypot: bots only
+    fd.append('_subject', `Booking request: ${d.type}${d.date ? ' on ' + d.date : ''}`);
+    fd.append('_replyto', d.email);
+    const label = btn.innerHTML;
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      const r = await fetch(FORMSPREE_URL, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+      if (!r.ok) throw new Error('bad status ' + r.status);
+      track('generate_lead', { event_type: d.type });
+      form.innerHTML = `<div class="done"><h3>Request sent. Thank you!</h3>
+        <p>Tripp got your booking request and will reply to ${d.email.replace(/[<>&"]/g, '')} personally. For a faster answer, call or text ${PHONE}.</p></div>`;
+    } catch (ex) {
+      btn.disabled = false; btn.innerHTML = label;
+      err.textContent = `Sorry, that didn't send. Please try again or call or text ${PHONE}.`;
+    }
   });
 })();
