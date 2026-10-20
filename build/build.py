@@ -7,7 +7,7 @@ from pages import SERVICE_PAGES, AREA_PAGES
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "..", "public")
 TODAY = datetime.date.today().isoformat()
-GA_ID = "G-TKGH0VNNSR"
+GA_ID = "G-LT49P4LT8C"
 PLAUSIBLE_DOMAIN = "" # or a domain if using Plausible instead
 GSC_VERIFY = ""       # Google Search Console HTML-tag verification code
 
