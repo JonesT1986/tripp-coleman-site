@@ -309,6 +309,7 @@ write("about/index.html", doc); pages.append((path, "0.8"))
 
 # ------------------------------------------------------------------ booking form (shared)
 FORM = f'''<form id="bookForm" class="book-form" novalidate>
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
   <div class="f"><label for="bName">Your name</label><input id="bName" name="name" autocomplete="name" required></div>
   <div class="f"><label for="bEmail">Email</label><input id="bEmail" name="email" type="email" autocomplete="email" required></div>
   <div class="f"><label for="bPhone">Phone (optional)</label><input id="bPhone" name="phone" type="tel" autocomplete="tel"></div>
