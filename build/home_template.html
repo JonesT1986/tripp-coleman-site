@@ -357,7 +357,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
       <p>Tell Tripp about your event and he'll come back with availability and a show that fits. He travels throughout Saskatchewan and beyond.</p>
       <div class="contacts">
         <div class="contact-row"><span>Call or text</span><a href="tel:+13062098861" class="cval">306-209-8861</a><button type="button" class="copy" data-copy="306-209-8861">Copy</button></div>
-        <div class="contact-row"><span>Email</span><a href="mailto:timcoleman777@gmail.com" class="cval">timcoleman777@gmail.com</a><button type="button" class="copy" data-copy="timcoleman777@gmail.com">Copy</button></div>
+        <div class="contact-row"><span>Email</span><a href="mailto:trippmagic317@gmail.com" class="cval">trippmagic317@gmail.com</a><button type="button" class="copy" data-copy="trippmagic317@gmail.com">Copy</button></div>
         <div class="contact-row"><span>Instagram</span><a href="https://www.instagram.com/trippcoleman317/" target="_blank" rel="noopener" class="cval">@trippcoleman317</a></div>
         <div class="contact-row"><span>Facebook</span><a href="https://www.facebook.com/TrippMagic317" target="_blank" rel="noopener" class="cval">TrippMagic317</a></div>
       </div>
@@ -683,7 +683,7 @@ form.addEventListener('submit', e => {
   if (!d.name.trim()) { err.textContent = 'Add your name so Tripp knows who to reply to.'; form.bName.focus(); return; }
   if (!/^\S+@\S+\.\S+$/.test(d.email)) { err.textContent = 'Enter an email address like you@example.com.'; form.bEmail.focus(); return; }
   const text = `Booking request for Tripp Coleman\n\nName: ${d.name}\nEmail: ${d.email}\nEvent: ${d.type}${d.date ? '\nDate: '+d.date : ''}${d.guests ? '\nGuests: '+d.guests : ''}${d.city ? '\nWhere: '+d.city : ''}${d.message ? '\n\n'+d.message : ''}`;
-  form.innerHTML = `<div class="done"><h3>Your request is ready.</h3><p>Copy it and send it to Tripp at <b style="color:var(--bone);user-select:all">timcoleman777@gmail.com</b>, or text it to <b style="color:var(--bone);user-select:all">306-209-8861</b>.</p><pre id="reqText"></pre><div class="ctas"><button type="button" class="btn btn-primary" id="copyReq">Copy request</button><button type="button" class="btn btn-ghost" id="editReq">Start over</button></div></div>`;
+  form.innerHTML = `<div class="done"><h3>Your request is ready.</h3><p>Copy it and send it to Tripp at <b style="color:var(--bone);user-select:all">trippmagic317@gmail.com</b>, or text it to <b style="color:var(--bone);user-select:all">306-209-8861</b>.</p><pre id="reqText"></pre><div class="ctas"><button type="button" class="btn btn-primary" id="copyReq">Copy request</button><button type="button" class="btn btn-ghost" id="editReq">Start over</button></div></div>`;
   document.getElementById('reqText').textContent = text;
   document.getElementById('copyReq').addEventListener('click', ev => {
     const b = ev.currentTarget;

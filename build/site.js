@@ -1,5 +1,5 @@
 (() => {
-  const PHONE = '306-209-8861', PHONE_E164 = '+13062098861', EMAIL = 'timcoleman777@gmail.com';
+  const PHONE = '306-209-8861', PHONE_E164 = '+13062098861', EMAIL = 'trippmagic317@gmail.com';
 
   /* analytics: fires GA4 or Plausible events when either is installed */
   function track(name, params) {
