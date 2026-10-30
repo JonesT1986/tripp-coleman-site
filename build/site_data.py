@@ -50,6 +50,8 @@ AREAS = [
 ]
 
 TESTIMONIALS = [
+    dict(quote="Absolutely amazing! From start to finish, Tripp was fantastic and created the perfect atmosphere for our event! His talent and ability to keep everyone entertained made the experience truly memorable.",
+         name="Debbie P.", event="Google review", town="", date="October 2026"),
     dict(quote="He moved through the crowd effortlessly, entertaining families one by one.",
          name="Yolanda K.", event="Family BBQ", town="Radville, SK", date="July 2026"),
     dict(quote="Fun, unique.", name="Kaitlyn S.", event="Birthday gathering for 10", town="", date="January 2025"),

@@ -303,7 +303,7 @@ doc = (head(title, desc, path, page_graph(url, title, desc, crumbs, [person_page
        + page_hero(crumbs, "About Tripp", "About Tripp Coleman", f"Tripp Coleman, known on stage as Trippmagic, is a self-taught magician from Pilot Butte, Saskatchewan, who has been performing since {SINCE}. He has worked the streets of Las Vegas and performed for Capital GMC, John Deere, eXp Realty and the Conexus Arts Centre.", "levitate.webp", "Magician Tripp Coleman shaping his hands around an invisible floating object",
                    [("Performing since", str(SINCE)), ("Based in", "Pilot Butte, SK"), ("Style", "Close-up & stage"), ("Travel", "Up to ~200 miles")])
        + f'<div class="wrap content"><article class="prose">{about_body}</article>{side(rel, "Book Tripp for")}</div>'
-       + '<section class="block reviews"><div class="wrap"><div class="eyebrow">What people say</div><div class="quotes">' + testimonials_html() + f'</div><p class="fine">Reviews from verified bookings on <a href="{GIGSALAD}" target="_blank" rel="noopener">GigSalad</a>.</p></div></section>'
+       + '<section class="block reviews"><div class="wrap"><div class="eyebrow">What people say</div><div class="quotes">' + testimonials_html() + f'</div><p class="fine">Reviews from Google and verified bookings on <a href="{GIGSALAD}" target="_blank" rel="noopener">GigSalad</a>.</p></div></section>'
        + faq_html(about_faq) + cta_band() + "</main>" + footer())
 write("about/index.html", doc); pages.append((path, "0.8"))
 
